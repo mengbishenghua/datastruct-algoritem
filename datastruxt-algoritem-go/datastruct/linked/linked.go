@@ -55,9 +55,20 @@ func (l List) Set(index int, e interface{}) {
 }
 
 func (l List) Remove(index int) (bool, interface{}) {
-	panic("implement me")
+
 }
 
 func (l List) Clear() {
 	panic("implement me")
+}
+
+func (l *List) move(index int) *node {
+	l.check(index)
+
+}
+
+func (l *List) check(index int) {
+	if index < 0 || index > l.Size() {
+		panic("index out of bound")
+	}
 }

@@ -44,7 +44,7 @@ func (l *Array) Insert(index int, e interface{}) {
 		panic("index out of bound")
 	}
 	if l.Size() == l.Capacity() {
-		// 扩容
+		// TODO: 扩容
 	}
 	if index == l.size {
 		l.element = append(l.element, e)
