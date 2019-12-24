@@ -1,4 +1,4 @@
-package arraylist
+package array
 
 import (
 	"fmt"
@@ -34,7 +34,7 @@ func TestArrayLis(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			l := &ArrayList{
+			l := &Array{
 				element:  tt.fields.element,
 				size:     tt.fields.size,
 				capacity: tt.fields.capacity,
@@ -56,18 +56,29 @@ func TestArrayLis(t *testing.T) {
 			if ok, res := l.Remove(l.Size() - 1); ok {
 				fmt.Println("res remove: ", res)
 			}
+
 			l.ForEach(func(v interface{}) {
 				fmt.Printf("%d ", v)
 			})
+
 			fmt.Println("Size = ", l.Size())
 			fmt.Println("capacity: ", l.Capacity())
 			l.Set(5, 100)
 			fmt.Println("index 5: ", l.Get(5))
+
 			if ok, _ := l.Remove(100); !ok {
 				fmt.Println("remove is not ok")
 			}
+
 			fmt.Println("is empty: ", l.Empty())
 			l.Insert(l.Size(), 500)
+			l.ForEach(func(v interface{}) {
+				fmt.Printf("%d ", v)
+			})
+
+			fmt.Println()
+			l.Clear()
+			fmt.Println("is empty: ", l.Empty())
 			l.ForEach(func(v interface{}) {
 				fmt.Printf("%d ", v)
 			})
