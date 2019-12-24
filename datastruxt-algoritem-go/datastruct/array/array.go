@@ -43,8 +43,8 @@ func (l *Array) Insert(index int, e interface{}) {
 	if index < 0 || index > l.size {
 		panic("index out of bound")
 	}
-	if l.Size() == l.Capacity() {
-		// TODO: 扩容
+	if l.Size() >= l.Capacity() {
+		l.resize(l.Capacity() * 2)
 	}
 	if index == l.size {
 		l.element = append(l.element, e)
@@ -103,4 +103,12 @@ func (l *Array) checked(index int) {
 	if index < 0 || index >= l.Size() {
 		panic("index out of bound")
 	}
+}
+
+func (l *Array) resize(capacity int) {
+	// 要指定长度才能copy，因为copy()函数使用的是len(dest)和len(src)的最小值
+	newElement := make([]interface{}, l.Size(), capacity)
+	copy(newElement[0:], l.element)
+	l.element = newElement
+	l.capacity = capacity
 }

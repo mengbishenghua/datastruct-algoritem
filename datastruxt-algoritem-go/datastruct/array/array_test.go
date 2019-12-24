@@ -82,6 +82,15 @@ func TestArrayLis(t *testing.T) {
 			l.ForEach(func(v interface{}) {
 				fmt.Printf("%d ", v)
 			})
+
+			for i := 0; i < 20; i++ {
+				l.Append(i * 10)
+			}
+			fmt.Println("new capacity: ", l.Capacity())
+			fmt.Println("new size: ", l.Size())
+			l.ForEach(func(v interface{}) {
+				fmt.Printf("%d ", v)
+			})
 		})
 	}
 }
