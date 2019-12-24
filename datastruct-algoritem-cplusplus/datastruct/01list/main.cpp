@@ -1,20 +1,45 @@
 //
 // Created by czx on 2019/12/23.
 //
+#include <iostream>
+#include "Vector.hpp"
+#include "List.hpp"
+
+void vectorTest();
 
 using namespace std;
 
-int main(int argv, char *args[]) {
-    auto *x = new ArrayList<int>(100);
-    ArrayList<double> y(100);
-
-    ArrayList<double> w(y);
-
+void vectorTest() {
+    Vector<int> v;
     for (int i = 0; i < 10; ++i) {
-        x->insert(x->size(), i);
+        v.push_back(i);
     }
 
-    std::cout << x << std::endl;
+    for (int &i : v) {
+        cout << i << " ";
+    }
 
+    v.insert(5, 100);
+    cout << endl;
+    for (auto it = v.begin(); it != v.end(); ++it) {
+        cout << *it << " ";
+    }
+}
+
+void listTest() {
+    List<int> list;
+    for (int i = 0; i < 10; ++i) {
+        list.push_back(i);
+    }
+
+    for (int &i : list) {
+        cout << i << " ";
+    }
+}
+
+int main(int argv, char *args[]) {
+    vectorTest();
+    std::cout << "\n---------------------------" << std::endl;
+    listTest();
     return 0;
 }

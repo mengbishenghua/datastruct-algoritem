@@ -1,4 +1,4 @@
-package com.algorithm.util;
+package algoritem.util;
 
 /**
  * @author czx

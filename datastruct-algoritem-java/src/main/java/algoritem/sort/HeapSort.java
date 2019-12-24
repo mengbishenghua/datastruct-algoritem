@@ -1,8 +1,7 @@
-package com.algorithm.sort;
+package algoritem.sort;
 
-import com.algorithm.util.SortUtil;
 
-import java.util.Arrays;
+import algoritem.util.SortUtil;
 
 /**
  * 堆排序，堆很重要，很多的贪心算法都有堆的思想

@@ -1,4 +1,4 @@
-package com.function;
+package function;
 
 import java.util.Objects;
 
@@ -17,7 +17,8 @@ public interface Iterator<E> {
 
     default void forEachRemaining(Consumer<? super E> action) {
         Objects.requireNonNull(action);
-        while (hasNext())
+        while (hasNext()) {
             action.forEach(next());
+        }
     }
 }

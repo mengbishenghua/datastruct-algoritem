@@ -1,7 +1,7 @@
-package com.datastruct.linkedlist;
+package datastruct.linkedlist;
 
-import com.datastruct.List;
-import com.function.Iterator;
+import datastruct.List;
+import function.Iterator;
 
 /**
  * @author czx

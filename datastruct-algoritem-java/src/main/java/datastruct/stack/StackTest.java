@@ -1,4 +1,4 @@
-package com.datastruct.stack;
+package datastruct.stack;
 
 /**
  * @author czx

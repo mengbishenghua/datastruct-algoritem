@@ -1,6 +1,7 @@
-package com.algorithm.search;
+package algoritem.search;
 
-import static com.algorithm.sort.InsertSort.insertSort;
+
+import static algoritem.sort.InsertSort.insertSort;
 
 /**
  * 二分查找法要先排序

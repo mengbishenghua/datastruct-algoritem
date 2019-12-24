@@ -1,4 +1,4 @@
-package com.datastruct.queue;
+package datastruct.queue;
 
 /**
  * @author czx

@@ -1,7 +1,8 @@
-package com.datastruct.queue;
+package datastruct.queue;
 
-import com.datastruct.linkedlist.LinkedList;
-import com.function.Iterator;
+
+import datastruct.linkedlist.LinkedList;
+import function.Iterator;
 
 /**
  * 双向链表实现的队列
@@ -10,7 +11,6 @@ import com.function.Iterator;
  * @date 2019/12/24
  */
 public class Queue<E> extends LinkedList<E> {
-
     public boolean offer(E e) {
         return add(e);
     }

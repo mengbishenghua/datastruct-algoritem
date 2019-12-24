@@ -1,7 +1,8 @@
-package com.datastruct.stack;
+package datastruct.stack;
 
-import com.datastruct.arraylist.ArrayList;
-import com.function.Consumer;
+
+import datastruct.arraylist.ArrayList;
+import function.Consumer;
 
 import java.util.Objects;
 

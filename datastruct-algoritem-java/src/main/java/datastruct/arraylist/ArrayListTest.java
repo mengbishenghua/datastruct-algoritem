@@ -1,6 +1,6 @@
-package com.datastruct.arraylist;
+package datastruct.arraylist;
 
-import com.datastruct.List;
+import datastruct.List;
 
 /**
  * @author czx

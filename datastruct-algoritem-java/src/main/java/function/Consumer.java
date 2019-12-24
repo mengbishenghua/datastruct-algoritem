@@ -1,4 +1,4 @@
-package com.function;
+package function;
 
 /**
  * @author czx

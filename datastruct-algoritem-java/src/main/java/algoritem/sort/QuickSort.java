@@ -1,9 +1,9 @@
-package com.algorithm.sort;
+package algoritem.sort;
 
-import com.algorithm.util.SortUtil;
+
+import algoritem.util.SortUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;

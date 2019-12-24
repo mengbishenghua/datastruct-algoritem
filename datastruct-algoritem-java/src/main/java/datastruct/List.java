@@ -1,6 +1,6 @@
-package com.datastruct;
+package datastruct;
 
-import com.function.Iterable;
+import function.Iterable;
 
 /**
  * @author czx

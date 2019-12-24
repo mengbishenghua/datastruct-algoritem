@@ -1,8 +1,8 @@
-package com.datastruct.arraylist;
+package datastruct.arraylist;
 
-import com.datastruct.List;
-import com.function.Consumer;
-import com.function.Iterator;
+import datastruct.List;
+import function.Consumer;
+import function.Iterator;
 
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;

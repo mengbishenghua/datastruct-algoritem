@@ -1,8 +1,7 @@
-package com.algorithm.sort;
+package algoritem.sort;
 
-import com.algorithm.util.SortUtil;
 
-import java.util.Arrays;
+import algoritem.util.SortUtil;
 
 /**
  * @author czx

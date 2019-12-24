@@ -1,7 +1,5 @@
-package com.algorithm.util;
-
+package algoritem.util;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Consumer;
 
 /**
  * @author czx
@@ -14,14 +12,14 @@ public class SortUtil {
         arr[j] = temp;
     }
 
-    public static void duration(String fnName, Consumer<int[]> consumer, int[] arr) {
+    public static void duration(String fnName, java.util.function.Consumer<int[]> consumer, int[] arr) {
         long start = System.currentTimeMillis();
         consumer.accept(arr);
         System.out.println(fnName + " run time: " + (System.currentTimeMillis() - start) + "ms");
     }
 
     public static void duration(String fnName,
-                                com.algorithm.util.Consumer<int[], Integer, Integer> consumer,
+                                Consumer<int[], Integer, Integer> consumer,
                                 int[] arr, int u, int r) {
         long start = System.currentTimeMillis();
         consumer.accept(arr, u, r);
