@@ -5,6 +5,7 @@ type Q interface {
 	Push(e interface{})
 	Pop() (bool, interface{})
 	Empty() bool
+	Peek() interface{}
 	Size() int
 	Clear()
 }
