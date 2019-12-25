@@ -20,10 +20,10 @@ func TestStack(t *testing.T) {
 	fmt.Println("peek: ", s.Peek())
 	fmt.Println("s.Empty() = ", s.Empty())
 
-	if ok, i := s.PopFront(); ok {
+	if ok, i := s.Pop(); ok {
 		fmt.Println("pop success: ", i)
 	}
-	if ok, i := s.PopFront(); ok {
+	if ok, i := s.Pop(); ok {
 		fmt.Println("pop success: ", i)
 	}
 

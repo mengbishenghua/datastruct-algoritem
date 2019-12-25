@@ -34,7 +34,7 @@ func (s *Stack) Push(e interface{}) {
 	s.size++
 }
 
-func (s *Stack) PopFront() (bool, interface{}) {
+func (s *Stack) Pop() (bool, interface{}) {
 	if s.Empty() {
 		return false, nil
 	}
