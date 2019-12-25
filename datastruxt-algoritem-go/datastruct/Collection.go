@@ -9,6 +9,6 @@ type Collection interface {
 	Size() int
 	Get(index int) interface{}
 	Set(index int, e interface{})
-	Remove(index int) (bool, interface{})
+	pop(index int) (bool, interface{})
 	Clear()
 }

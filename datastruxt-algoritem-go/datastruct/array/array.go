@@ -77,7 +77,7 @@ func (l *Array) Set(index int, e interface{}) {
 	l.element[index] = e
 }
 
-func (l *Array) Remove(index int) (bool, interface{}) {
+func (l *Array) pop(index int) (bool, interface{}) {
 	if index < 0 || index >= l.Size() {
 		return false, nil
 	}

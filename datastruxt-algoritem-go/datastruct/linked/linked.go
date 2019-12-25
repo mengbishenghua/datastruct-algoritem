@@ -36,11 +36,7 @@ func (l *List) Append(e interface{}) {
 func (l *List) Insert(index int, e interface{}) {
 	l.check(index)
 	curr := l.move(index)
-	n := &node{
-		prev: curr,
-		next: curr.next,
-		data: e,
-	}
+	n := newNode(curr, curr.next, e)
 	curr.next.prev = n
 	curr.next = n
 	l.size++
@@ -70,7 +66,7 @@ func (l *List) Set(index int, e interface{}) {
 	curr.next.data = e
 }
 
-func (l *List) Remove(index int) (bool, interface{}) {
+func (l *List) pop(index int) (bool, interface{}) {
 	if index < 0 || index >= l.Size() {
 		panic("index out of bound")
 	}
