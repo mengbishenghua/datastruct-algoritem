@@ -34,6 +34,17 @@ func (q *Queue) Push(e interface{}) {
 	q.size++
 }
 
+func (q *Queue) Pop() (bool, interface{}) {
+	if q.Empty() {
+		return false, nil
+	}
+	curr := q.head.next
+	curr.next.prev = curr.prev
+	curr.prev.next = curr.next
+	q.size--
+	return true, curr.data
+}
+
 func (q *Queue) Empty() bool {
 	return q.Size() == 0 || q.head == q.tail
 }
@@ -47,17 +58,6 @@ func (q *Queue) Peek() interface{} {
 		panic("queue is empty")
 	}
 	return q.head.next.data
-}
-
-func (q *Queue) Pop() (bool, interface{}) {
-	if q.Empty() {
-		return false, nil
-	}
-	curr := q.head.next
-	curr.next.prev = curr.prev
-	curr.prev.next = curr.next
-	q.size--
-	return true, curr.data
 }
 
 func (q *Queue) Clear() {
