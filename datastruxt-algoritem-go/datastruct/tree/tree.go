@@ -93,16 +93,21 @@ func (br *BinarySearchTree) delete(n *node, e interface{}) *node {
 		return n
 	}
 	comp := br.fn(e, n.data)
-	if comp < 0 {
+	if comp < 0 { // 小于当前节点
 		n.left = br.delete(n.left, e)
-	} else if comp > 0 {
+	} else if comp > 0 { // 大于当前节点
 		n.right = br.delete(n.right, e)
 	} else {
+		// 找到要删除的节点，如果有左右孩子
 		if n.left != nil && n.right != nil {
+			// 找到右子树的最小节点，实际上是找它的后继节点！
 			min := br.findMin(n.right)
+			// 删除最小节点，实际上是返回它的子节点，用父节点指向它的子节点
 			n.right = br.delete(n.right, min.data)
+			// 将后继节点的值赋值给当前节点
 			n.data = min.data
 		} else {
+			// 只有一个孩子,返回它的孩子
 			if n.left != nil {
 				n = n.left
 			} else {
