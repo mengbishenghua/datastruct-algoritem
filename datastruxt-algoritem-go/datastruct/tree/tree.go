@@ -15,7 +15,6 @@ func newNode(data interface{}, left *node, right *node) *node {
 //BinarySearchTree 二叉搜索树
 type BinarySearchTree struct {
 	root *node
-	size int
 	fn   func(t1, t2 interface{}) int
 }
 
@@ -29,7 +28,6 @@ func (br *BinarySearchTree) Empty() bool {
 
 func (br *BinarySearchTree) Add(e interface{}) {
 	br.root = br.add(br.root, e)
-	br.size++
 }
 
 func (br *BinarySearchTree) FindMin() interface{} {
