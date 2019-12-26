@@ -11,7 +11,7 @@ import function.Iterator;
  * @date 2019/12/24
  */
 public class Queue<E> extends LinkedList<E> {
-    public boolean offer(E e) {
+    public boolean push(E e) {
         return add(e);
     }
 

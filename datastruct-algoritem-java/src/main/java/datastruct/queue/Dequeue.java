@@ -7,11 +7,7 @@ package datastruct.queue;
  * @date 2019/12/24
  */
 public class Dequeue<E> extends Queue<E> {
-    public boolean offer(E e) {
-        return add(e);
-    }
-
-    public boolean offerFront(E e) {
+    public boolean pushFront(E e) {
         return add(0, e);
     }
 
