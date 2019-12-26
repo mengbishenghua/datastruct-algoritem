@@ -14,4 +14,9 @@ public class Dequeue<E> extends Queue<E> {
     public E popFront() {
         return remove(0);
     }
+
+    @Override
+    public E pop() {
+        return remove(size() - 1);
+    }
 }
