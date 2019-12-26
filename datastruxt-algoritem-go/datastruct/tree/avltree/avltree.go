@@ -18,6 +18,11 @@ func newNode(value interface{}, left *node, right *node, h int) *node {
 	return &node{value: value, left: left, right: right, h: h}
 }
 
+// AVL树：AVL树是平衡搜索树，空树是AVL树，AVL树定义：
+// 1.左子树和右子树是AVL树
+// 2.左子树的高度-右子树的高度<=1
+// 3.它是搜索树
+// 相比于搜索树，多了一个高度和平衡因子函数进行旋转
 type AvlTree struct {
 	root *node
 	fn   func(c1, c2 interface{}) int
