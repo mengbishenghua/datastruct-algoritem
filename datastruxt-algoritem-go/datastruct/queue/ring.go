@@ -6,7 +6,7 @@ import "math"
 const DefaultCapacity = 16
 
 // RingQueue 循环队列, 我们多创建一个容量便于判断是否队满：make(type, len, cap+1)
-// 添加一个元素时，rear++， 删除一个元素时，front--
+// 添加一个元素时，rear++， 删除一个元素时，front++
 // 队列为空时: front == rear
 // 队列为满： (rear + 1) % cap(element) == front
 // 队列大小：Math.abs(rear-front) % cap(element)
@@ -30,7 +30,7 @@ func (r *RingQueue) Push(e interface{}) {
 		r.resize(cap(r.element)*2 - 1)
 	}
 	r.element[r.rear] = e
-	r.rear++
+	r.rear = r.nextIndex(r.rear)
 	r.size++
 }
 
@@ -38,9 +38,10 @@ func (r *RingQueue) Pop() (bool, interface{}) {
 	if r.Empty() {
 		return false, nil
 	}
-	r.front++
+	res := r.element[r.front]
+	r.front = r.nextIndex(r.front)
 	r.size--
-	return true, r.element[r.front-1]
+	return true, res
 }
 
 func (r *RingQueue) Empty() bool {
@@ -68,7 +69,7 @@ func (r *RingQueue) resize(capacity int) {
 	curr := r.front
 	for i := 0; curr != r.rear; i++ {
 		newElement[i] = r.element[curr]
-		curr = (curr + 1) % cap(r.element)
+		curr = r.nextIndex(curr)
 	}
 	r.front = 0
 	r.rear = r.Size()
@@ -79,6 +80,11 @@ func (r *RingQueue) Foreach(fn func(v interface{})) {
 	curr := r.front
 	for curr != r.rear {
 		fn(r.element[curr])
-		curr = (curr + 1) % cap(r.element)
+		curr = r.nextIndex(curr)
 	}
+}
+
+// 计算下一个索引的位置
+func (r *RingQueue) nextIndex(curr int) int {
+	return (curr + 1) % cap(r.element)
 }
