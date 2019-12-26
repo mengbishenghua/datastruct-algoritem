@@ -17,7 +17,7 @@ public class Stack<E> extends ArrayList<E> {
     }
 
     public boolean push(E e) {
-        return this.push(e);
+        return add(e);
     }
 
     public E peek() {

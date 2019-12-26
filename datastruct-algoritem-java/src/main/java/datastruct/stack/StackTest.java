@@ -12,5 +12,11 @@ public class StackTest {
         }
 
         stack.forEach(e -> System.out.print(e + " "));
+
+        System.out.println();
+        while (!stack.isEmpty()) {
+            Integer pop = stack.pop();
+            System.out.print(pop + " ");
+        }
     }
 }
