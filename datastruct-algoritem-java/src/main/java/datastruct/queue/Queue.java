@@ -21,6 +21,6 @@ public class Queue<E> extends LinkedList<E> {
     }
 
     public E pop() {
-        return remove(size() - 1);
+        return remove(0);
     }
 }
