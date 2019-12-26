@@ -25,7 +25,7 @@ public class AvlTree<T extends Comparable<? super T>> {
         inOrder(root);
     }
 
-    public void inOrder(AvlNode node) {
+    private void inOrder(AvlNode node) {
         if (node == null) {
             return;
         }
