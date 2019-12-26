@@ -11,7 +11,7 @@ package datastruct.tree;
  * @date 2019/12/26
  */
 public class AvlTree<T extends Comparable<? super T>> {
-    AvlNode root;
+    private AvlNode root;
 
     public void insert(T t) {
         root = insert(root, t);
