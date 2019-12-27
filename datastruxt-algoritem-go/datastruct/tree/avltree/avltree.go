@@ -85,14 +85,9 @@ func (at *AvlTree) inOrder(n *node) {
 	if n == nil {
 		return
 	}
-
-	if n.left != nil {
-		at.inOrder(n.left)
-	}
+	at.inOrder(n.left)
 	fmt.Print(n.value, " ")
-	if n.right != nil {
-		at.inOrder(n.right)
-	}
+	at.inOrder(n.right)
 }
 
 func (at *AvlTree) findMin(n *node) interface{} {

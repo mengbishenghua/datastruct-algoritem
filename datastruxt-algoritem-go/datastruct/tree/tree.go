@@ -50,13 +50,9 @@ func (br *BinarySearchTree) inOrder(n *node, fn func(e interface{})) {
 	if n == nil {
 		return
 	}
-	if n.left != nil {
-		br.inOrder(n.left, fn)
-	}
+	br.inOrder(n.left, fn)
 	fn(n.data)
-	if n.right != nil {
-		br.inOrder(n.right, fn)
-	}
+	br.inOrder(n.right, fn)
 }
 
 func (br *BinarySearchTree) findMin(n *node) *node {
