@@ -29,13 +29,9 @@ public class AvlTree<T extends Comparable<? super T>> {
         if (node == null) {
             return;
         }
-        if (node.left != null) {
-            inOrder(node.left);
-        }
+        inOrder(node.left);
         System.out.print(node.value + " ");
-        if (node.right != null) {
-            inOrder(node.right);
-        }
+        inOrder(node.right);
     }
 
     private AvlNode insert(AvlNode node, T t) {

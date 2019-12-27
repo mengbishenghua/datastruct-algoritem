@@ -122,13 +122,9 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         if (node == null) {
             return;
         }
-        if (node.left != null) {
-            inOrder(node.left);
-        }
+        inOrder(node.left);
         System.out.print(node.data + " ");
-        if (node.right != null) {
-            inOrder(node.right);
-        }
+        inOrder(node.right);
     }
 
     private class Node {
