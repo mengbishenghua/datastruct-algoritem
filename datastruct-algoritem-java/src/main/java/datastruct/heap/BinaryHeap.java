@@ -17,7 +17,7 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     public BinaryHeap() {
     }
 
-    public BinaryHeap(int capacity) {
+        public BinaryHeap(int capacity) {
         if (capacity <= 0) {
             throw new IndexOutOfBoundsException("capacity is must not <= 0");
         }
