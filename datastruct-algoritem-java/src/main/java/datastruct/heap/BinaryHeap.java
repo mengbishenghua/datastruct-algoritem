@@ -5,6 +5,7 @@ package datastruct.heap;
  * 优先队列父节点：i/2
  * 这里实现了最小堆
  * 这里的二叉堆根节点从1开始的，0号位置保留
+ *
  * @author czx
  * @date 2019/12/30
  */
@@ -17,6 +18,10 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     }
 
     public BinaryHeap(int capacity) {
+        if (capacity <= 0) {
+            throw new IndexOutOfBoundsException("capacity is must not <= 0");
+        }
+        array = new Object[capacity];
     }
 
     public BinaryHeap(T[] items) {
@@ -64,7 +69,7 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     }
 
     public void makeEmpty() {
-
+        array = new Object[DEFAULT_CAPACITY];
     }
 
     @SuppressWarnings("unchecked")
