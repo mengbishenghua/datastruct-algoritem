@@ -50,10 +50,10 @@ func TestArrayLis(t *testing.T) {
 			fmt.Println()
 			fmt.Println("Size = ", l.Size())
 			fmt.Println("capacity: ", l.Capacity())
-			if ok, res := l.pop(0); ok {
+			if ok, res := l.Pop(0); ok {
 				fmt.Println("remove res: ", res)
 			}
-			if ok, res := l.pop(l.Size() - 1); ok {
+			if ok, res := l.Pop(l.Size() - 1); ok {
 				fmt.Println("res remove: ", res)
 			}
 
@@ -66,7 +66,7 @@ func TestArrayLis(t *testing.T) {
 			l.Set(5, 100)
 			fmt.Println("index 5: ", l.Get(5))
 
-			if ok, _ := l.pop(100); !ok {
+			if ok, _ := l.Pop(100); !ok {
 				fmt.Println("remove is not ok")
 			}
 

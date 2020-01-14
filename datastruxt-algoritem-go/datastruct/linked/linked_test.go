@@ -29,7 +29,7 @@ func TestLinkedList(t *testing.T) {
 	fmt.Println(lk.Get(0))
 	lk.Set(8, 4500)
 	fmt.Println(lk.Get(8))
-	if ok, i := lk.pop(lk.Size() - 1); ok {
+	if ok, i := lk.Pop(lk.Size() - 1); ok {
 		fmt.Println("remove ok: ", i)
 	}
 	fmt.Println()

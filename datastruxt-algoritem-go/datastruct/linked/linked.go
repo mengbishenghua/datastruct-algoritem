@@ -66,7 +66,7 @@ func (l *List) Set(index int, e interface{}) {
 	curr.next.data = e
 }
 
-func (l *List) pop(index int) (bool, interface{}) {
+func (l *List) Pop(index int) (bool, interface{}) {
 	if index < 0 || index >= l.Size() {
 		panic("index out of bound")
 	}
