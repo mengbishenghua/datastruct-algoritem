@@ -35,10 +35,10 @@ func TestRingQueue(t *testing.T) {
 		fmt.Println("pop success: ", i)
 	}
 
+	fmt.Println("size: ", r.Size())
+
 	r.Clear()
 	fmt.Println("is empty: ", r.Empty())
-	fmt.Println("size: ", r.Size())
-	fmt.Println("capacity: ", cap(r.element))
 	for i := 0; i < 20; i++ {
 		r.Push(i)
 	}
