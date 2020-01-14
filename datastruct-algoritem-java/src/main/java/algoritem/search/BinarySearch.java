@@ -16,6 +16,9 @@ public class BinarySearch {
         int i = binarySearch(arr, 5);
         System.out.println(i);
         System.out.println(arr[i]);
+
+        boolean b = binarySearchRecursion(arr, 100, 0, arr.length - 1);
+        System.out.println("b = " + b);
     }
 
     public static int binarySearch(int[] arr, int x) {
@@ -32,5 +35,19 @@ public class BinarySearch {
             }
         }
         return -1;
+    }
+
+    public static boolean binarySearchRecursion(int[] arr, int x, int start, int end) {
+        int mid = start + (end - start) >> 2;
+        if (mid > end || mid < start){
+            return false;
+        }
+        if (arr[mid] == x) {
+            return true;
+        } else if (arr[mid] > x) {
+            return binarySearchRecursion(arr, x, start, mid - 1);
+        } else {
+            return binarySearchRecursion(arr, x, mid + 1, end);
+        }
     }
 }

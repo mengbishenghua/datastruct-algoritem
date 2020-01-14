@@ -71,7 +71,7 @@ func TestArrayLis(t *testing.T) {
 			}
 
 			fmt.Println("is empty: ", l.Empty())
-			l.Insert(l.Size(), 500)
+			l.Insert(4, 500)
 			l.ForEach(func(v interface{}) {
 				fmt.Printf("%d ", v)
 			})

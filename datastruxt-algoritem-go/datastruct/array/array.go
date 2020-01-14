@@ -49,7 +49,10 @@ func (l *Array) Insert(index int, e interface{}) {
 	if index == l.size {
 		l.element = append(l.element, e)
 	} else {
-		copy(l.element[index:], l.element[index+1:])
+		// 1 2 3 4 5
+		//     i
+		// 1 2 3 3 4 5
+		copy(l.element[index+1:], l.element[index:])
 		l.element[index] = e
 	}
 	l.size++
