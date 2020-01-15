@@ -65,6 +65,17 @@ func TestSearch(t *testing.T) {
 			want:  true,
 			want1: 9,
 		},
+		{
+			name: "binary search 1",
+			args: args{
+				arr:   arr,
+				begin: 0,
+				end:   9,
+				x:     124,
+			},
+			want:  false,
+			want1: -1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
