@@ -37,7 +37,7 @@ func TestSOrt(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			array := util.SortedArray(tt.args.arr)
-			SOrt(tt.args.arr)
+			Sort(tt.args.arr)
 			fmt.Println(tt.name+" result: ", reflect.DeepEqual(array, tt.args.arr))
 		})
 	}

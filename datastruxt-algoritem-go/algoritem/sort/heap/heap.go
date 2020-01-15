@@ -4,7 +4,7 @@ import "com.datastruct.algoritem.go/algoritem/util"
 
 // Create by czx on 2020/1/1
 
-func SOrt(arr []int) {
+func Sort(arr []int) {
 	heapSort(arr)
 }
 
@@ -28,6 +28,7 @@ func heapSort(arr []int) {
 	}
 }
 
+// 转为大顶堆
 func Insert(arr []int, i int) {
 	for arr[i] > arr[(i-1)/2] {
 		util.Swap(arr, i, (i-1)/2)
@@ -35,6 +36,7 @@ func Insert(arr []int, i int) {
 	}
 }
 
+// 从上往下修复堆的排序
 func heapIfy(arr []int, index, size int) {
 	left := 2*index + 1
 	for left < size {
