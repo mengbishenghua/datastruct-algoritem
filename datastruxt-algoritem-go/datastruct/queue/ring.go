@@ -5,7 +5,9 @@ import "math"
 // Create by czx on 2019/12/25
 const DefaultCapacity = 16
 
-// RingQueue 循环队列
+// RingQueue 循环队列， 我们会多创建一个容量，这样Push的时候刚好能放满一开始时指定的容量后才会扩容，
+// 比如初始容量为10，我们创建容量为11，但插入10个元素后,rear指向了最后一个索引10的位置，下一次再
+// Push的时候会判断(10+1) % 11 == Front，队满，然后开始扩容个
 // 添加一个元素时，rear++， 删除一个元素时，front++
 // 队列为空时: front == rear
 // 队列为满： (rear + 1) % cap(element) == front
@@ -21,12 +23,12 @@ func NewRingQueue(n int) *RingQueue {
 	if n <= 0 || n > math.MaxInt64 {
 		panic("n overflow")
 	}
-	return &RingQueue{element: make([]interface{}, n, n)}
+	return &RingQueue{element: make([]interface{}, n, n+1)}
 }
 
 func (r *RingQueue) Push(e interface{}) {
 	if r.full() {
-		r.resize(cap(r.element) * 2)
+		r.resize(cap(r.element)*2 - 1)
 	}
 	r.element[r.rear] = e
 	r.rear = r.nextIndex(r.rear)

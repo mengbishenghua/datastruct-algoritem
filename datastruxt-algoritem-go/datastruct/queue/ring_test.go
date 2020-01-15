@@ -17,7 +17,9 @@ func TestRingQueue(t *testing.T) {
 	})
 	fmt.Println()
 	fmt.Println("size: ", r.Size())
+	fmt.Println("capacity: ", cap(r.element))
 	r.Push(100)
+	fmt.Println("capacity: ", cap(r.element))
 	r.Foreach(func(v interface{}) {
 		fmt.Printf("%v ", v)
 	})
