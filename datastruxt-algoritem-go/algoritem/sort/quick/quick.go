@@ -2,6 +2,7 @@ package quick
 
 import (
 	"com.datastruct.algoritem.go/algoritem/util"
+	"math/rand"
 )
 
 // Create by czx on 2019/12/31
@@ -21,6 +22,8 @@ func quickSort(arr []int, l, r int) {
 }
 
 func partition(arr []int, l int, r int) int {
+	n := rand.Intn(r-l+1) + l
+	util.Swap(arr, n, l)
 	pivot := arr[l]
 	left := l + 1
 	right := r
@@ -58,6 +61,9 @@ func sortThreeWay(arr []int, l, r int) {
 
 func sort3Way(arr []int, l, r int) (int, int) {
 
+	// 随机快排
+	n := rand.Intn(r-l+1) + l
+	util.Swap(arr, n, l)
 	v := arr[l]
 	lt := l     // arr[l+1...lt] < v
 	gt := r + 1 // arr[gt...r] > v
