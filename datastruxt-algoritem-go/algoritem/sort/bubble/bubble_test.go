@@ -23,7 +23,7 @@ func TestBubbleSort(t *testing.T) {
 		},
 		{
 			"bubble sort 2",
-			args{util.GeneratorArray(10, 50, 100)},
+			args{util.GeneratorArray(100, 50, 100)},
 		},
 		{
 			"bubble sort 3",
