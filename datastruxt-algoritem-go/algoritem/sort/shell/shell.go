@@ -5,6 +5,7 @@ import "com.datastruct.algoritem.go/algoritem/util"
 // Create by czx on 2020/1/15
 
 // 希尔排序：将数组分组，每组应用插入排序
+// 查看相关博客：https://www.jianshu.com/p/40dcc3b83ddc
 func Sort(arr []int) {
 	length := len(arr)
 	if length == 1 {
