@@ -27,7 +27,7 @@ func TestOddEvenSort(t *testing.T) {
 		},
 		{
 			name: "odd even sort 3",
-			args: args{util.GeneratorArray(100000, 10, 10000)},
+			args: args{util.GeneratorArray(10000, 10, 1000)},
 		},
 	}
 	for _, tt := range tests {
