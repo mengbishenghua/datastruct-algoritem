@@ -60,7 +60,6 @@ func sortThreeWay(arr []int, l, r int) {
 }
 
 func sort3Way(arr []int, l, r int) (int, int) {
-
 	// 随机快排
 	n := rand.Intn(r-l+1) + l
 	util.Swap(arr, n, l)
